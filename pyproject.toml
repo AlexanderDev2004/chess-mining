@@ -1,0 +1,33 @@
+[project]
+name = "chess-mining"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Alexander Agung Raya", email = "alexgaming2120@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "polars>=2.1.0",
+    "pyarrow>=26.0.1",
+    "python-chess>=1.999",
+    "zstandard>=0.25.0",
+]
+
+[project.scripts]
+chess-mining = "chess_mining:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+extend-exclude = [".amp"]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.6",
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
